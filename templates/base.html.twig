@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset("style/style.css") }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <header>HEADER</header>
+        <header><h1>My Amazing Blog !</h1></header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-        <footer>FOOTER</footer>
+        <footer>&copy; Puck 2015-{{ "now"|date("Y") }}</footer>
     </body>
 </html>
