@@ -16,6 +16,8 @@
             <div>
                 <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
                 <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+                <br>
+                {{ post.comments.count }} Comments
             </div>
         </article>
         {% else %}
