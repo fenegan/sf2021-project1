@@ -7,7 +7,15 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <header><h1>My Amazing Blog !</h1></header>
+        <header><h1>My Amazing Blog !</h1>
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <a class="link" href="{{ path('app_logout') }}">Logout</a>
+        {% else %}
+            <a class="link" href="{{ path('app_login') }}">Login</a>
+            <a class="link" href="{{ path('app_register') }}">Register</a>
+        {% endif %}
+       
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <footer>&copy; Puck 2015-{{ "now"|date("Y") }}</footer>
